@@ -1,8 +1,8 @@
-mod searches;
+// mod searches;
 mod tests;
+mod sorts;
 
 
-use crate::tests::test_searches::test;
 fn main() {
-    test();
+    tests::test_sorts::test();
 }

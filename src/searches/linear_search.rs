@@ -1,4 +1,4 @@
-use crate::searches::SearchTrait;
+pub use crate::searches::SearchTrait;
 
 pub struct LinearSearch;
 
