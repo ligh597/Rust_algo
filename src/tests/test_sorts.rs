@@ -1,8 +1,8 @@
-use crate::sorts::selection_sort;
+use crate::sorts::sorts;
 use crate::sorts::SortTrait;
 pub(crate) fn test() {
     let mut data = vec![2,3,6,5,3,1,7];
 
-    selection_sort::SelectionSort.sort(&mut data);
+    sorts::SelectionSort.sort(&mut data,false);
     println!("Sorted data: {:?}", data)
 }
