@@ -3,7 +3,7 @@ pub use crate::sorts::SortTrait;
 pub struct SelectionSort;
 pub struct InsertionSort;
 
-impl<T: Ord> SortTrait<T> for SelectionSort {
+impl<T: Ord + Copy> SortTrait<T> for SelectionSort {
     fn sort(&self, data: &mut [T], is_reverse: bool) {
         for i in 0..data.len() {
             let mut min = i;
@@ -22,17 +22,20 @@ impl<T: Ord> SortTrait<T> for SelectionSort {
     }
 }
 
-impl<T: Ord> SortTrait<T> for InsertionSort {
+impl<T: Ord + Copy> SortTrait<T> for InsertionSort {
     fn sort(&self, data: &mut [T], is_reverse: bool) {
-        for i in 1..data.len() {
+        for i in 0..data.len(){
+
             let mut j = i;
-            while j > 0 && data[j - 1] > data[j] {
-                data.swap(j - 1, j);
+            let temp = data[i];
+            while j > 0 && temp < data[j-1] {
+                data[j] = data[j-1];
                 j -= 1;
             }
+            data[j] = temp; // 优化，替换swap
         }
         if is_reverse {
-            data.reverse()
+            data.reverse();
         }
     }
 }

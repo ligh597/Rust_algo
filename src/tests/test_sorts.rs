@@ -3,6 +3,6 @@ use crate::sorts::SortTrait;
 pub(crate) fn test() {
     let mut data = vec![2,3,6,5,3,1,7];
 
-    sorts::SelectionSort.sort(&mut data,false);
+    sorts::InsertionSort.sort(&mut data,false);
     println!("Sorted data: {:?}", data)
 }
