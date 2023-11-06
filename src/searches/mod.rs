@@ -1,4 +1,4 @@
-pub(crate) mod linear_search;
+pub mod linear_search;
 
 
 pub trait SearchTrait<T> {
