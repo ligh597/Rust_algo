@@ -84,9 +84,8 @@ impl<T: Copy + PartialEq> Array<T> {
         let index = self.find_all(e);
         let mut d = 0;
         for i in index {
-            self.remove(i-d);
+            self.remove(i - d);
             d += 1;
-
         }
     }
 }
@@ -104,11 +103,7 @@ impl<T> Index<usize> for Array<T> {
 
 impl<T: fmt::Display> fmt::Display for Array<T> {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        write!(
-            f,
-            "Array: \nsize = {}\nitem = ",
-            self.size,
-        )?;
+        write!(f, "Array: \nsize = {}\nitem = ", self.size,)?;
         write!(f, "[")?;
         for i in 0..self.size {
             write!(f, "{}", self.data[i])?;
